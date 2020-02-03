@@ -1,0 +1,11 @@
+{
+    ".txt,.doc,.xls,.xlsx": "C:\\Users\\behemoth\\Downloads\\DOC\\",
+    ".jpg,.PNG,.pdf": "C:\\Users\\behemoth\\Downloads\\img\\",
+    ".pdf": "C:\\Users\\behemoth\\Downloads\\PDF\\",
+    ".mp3": "C:\\Users\\behemoth\\Downloads\\Audio\\",
+    ".exe,.msi,.npk,.vdi,.vmdk,.vib": "C:\\Users\\behemoth\\Downloads\\exe\\",
+    ".MOV": "C:\\Users\\behemoth\\Downloads\\video\\",
+    ".zip,.rar": "C:\\Users\\behemoth\\Downloads\\ZIP\\",
+    ".torrent,.tfg": "Delete"
+}
+//заполнять без пробелов
