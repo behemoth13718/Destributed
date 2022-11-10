@@ -24,10 +24,14 @@ namespace clear
                 Application.Run(new Form1());
             }
             else { Clear(); }
-
+           
             void Clear()
             {
                 var DIR = new DirectoryInfo(ConfigurationManager.AppSettings["pathToDirectoryFiles"]);
+                var listFolders = ConfigurationManager.AppSettings ["listFolders"].Split(',');
+
+                CreateFolders(DIR.FullName,listFolders);
+
                 var dicPathExt = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(ConfigurationManager.AppSettings["fileWithPathExt"]));
 
                 foreach (FileInfo file in DIR.GetFiles())
@@ -57,7 +61,18 @@ namespace clear
                 }
             }
             
-            
+            void CreateFolders(string rootDirectory, string [] listFolders)
+            {
+                foreach (var folder in listFolders)
+                {
+                    var folderPath = Path.Combine(rootDirectory, folder);
+                    if (!Directory.Exists(folderPath))
+                    {
+                        Directory.CreateDirectory(Path.Combine(folderPath));
+                    }
+
+                }
+            }
         }
     }
 }
