@@ -1,11 +1,13 @@
 {
-    ".txt,.doc,.xls,.xlsx": "C:\\Users\\behemoth\\Downloads\\DOC\\",
-    ".jpg,.PNG,.pdf": "C:\\Users\\behemoth\\Downloads\\img\\",
-    ".pdf": "C:\\Users\\behemoth\\Downloads\\PDF\\",
-    ".mp3": "C:\\Users\\behemoth\\Downloads\\Audio\\",
-    ".exe,.msi,.npk,.vdi,.vmdk,.vib": "C:\\Users\\behemoth\\Downloads\\exe\\",
-    ".MOV": "C:\\Users\\behemoth\\Downloads\\video\\",
-    ".zip,.rar": "C:\\Users\\behemoth\\Downloads\\ZIP\\",
-    ".torrent,.tfg": "Delete"
+  ".txt,.doc,.xls,.xlsx,.csv,.docx": "C:\\Users\\andrey.korotin\\Downloads\\DOC\\",
+  ".config,.json,.xml": "C:\\Users\\andrey.korotin\\Downloads\\Configs\\",
+  ".sql": "C:\\Users\\andrey.korotin\\Downloads\\Scripts\\",
+  ".jpg,.PNG,.pdf,.png,.ico": "C:\\Users\\andrey.korotin\\Downloads\\img\\",
+  ".pdf": "C:\\Users\\andrey.korotin\\Downloads\\PDF\\",
+  ".mp3": "C:\\Users\\andrey.korotin\\Downloads\\Audio\\",
+  ".exe,.msi,.npk,.vdi,.vmdk,.vib": "C:\\Users\\andrey.korotin\\Downloads\\exe\\",
+  ".MOV": "C:\\Users\\andrey.korotin\\Downloads\\video\\",
+  ".zip,.rar,.7z,.tar": "C:\\Users\\andrey.korotin\\Downloads\\ZIP\\",
+  ".torrent,.tfg,.cs,.nupkg,.crt,.pem,.msu,.deb,.html": "Delete"
 }
 //��������� ��� �������

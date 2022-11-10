@@ -30,7 +30,8 @@ namespace clear
                 var DIR = new DirectoryInfo(ConfigurationManager.AppSettings["pathToDirectoryFiles"]);
                 var listFolders = ConfigurationManager.AppSettings ["listFolders"].Split(',');
 
-                CreateFolders(DIR.FullName,listFolders);
+
+                DeleteFolders(DIR.FullName,listFolders);
 
                 var dicPathExt = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(ConfigurationManager.AppSettings["fileWithPathExt"]));
 
@@ -42,6 +43,7 @@ namespace clear
                         string[] extention = kvp.Key.Split(',');
                         foreach (var ext in extention)
                             dicPath[ext] = kvp.Value;
+                        
                         if (dicPath.TryGetValue(file.Extension, out string outputPath))
                         {
                             if (outputPath == "Delete")
@@ -49,6 +51,10 @@ namespace clear
                                 File.Delete(file.FullName);
                                 break;
                             }
+
+                            if (!Directory.Exists(outputPath) && outputPath != "Delete")
+                                Directory.CreateDirectory(outputPath);
+
                             var filePath = Path.Combine(outputPath, file.Name);
                             try
                             {
@@ -61,16 +67,18 @@ namespace clear
                 }
             }
             
-            void CreateFolders(string rootDirectory, string [] listFolders)
+            void DeleteFolders(string rootDirectory, string [] listFolders)
             {
-                foreach (var folder in listFolders)
-                {
-                    var folderPath = Path.Combine(rootDirectory, folder);
-                    if (!Directory.Exists(folderPath))
-                    {
-                        Directory.CreateDirectory(Path.Combine(folderPath));
-                    }
+                var dirFolders = Directory.GetDirectories(rootDirectory);
 
+                foreach (var item in dirFolders)
+                {
+                    try
+                    {
+                        if (!listFolders.Any(x => Path.Combine(rootDirectory, x).ToLower() == item.ToLower()))
+                            Directory.Delete(item, true);
+                    }
+                    catch (Exception){}
                 }
             }
         }
